@@ -1,5 +1,6 @@
 //! Routines for managing interrupts.
 
+use core::arch::asm;
 use core::prelude::v1::*;
 use core::marker::PhantomData;
 
