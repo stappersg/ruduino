@@ -11,8 +11,6 @@
 
 extern crate const_env__value as const_env;
 
-use core::arch::asm;
-
 pub use self::register::{Register, RegisterBits, RegisterValue};
 pub use self::pin::{DataDirection, Pin};
 
