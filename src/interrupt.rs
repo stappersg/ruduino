@@ -22,7 +22,7 @@ pub fn without_interrupts<F, T>(f: F) -> T
 impl DisableInterrupts {
     #[inline(always)]
     pub fn new() -> DisableInterrupts {
-        unsafe { llvm_asm!("CLI") }
+        unsafe { asm!("CLI") }
         DisableInterrupts(PhantomData)
     }
 }
@@ -30,7 +30,7 @@ impl DisableInterrupts {
 impl Drop for DisableInterrupts {
     #[inline(always)]
     fn drop(&mut self) {
-        unsafe { llvm_asm!("SEI") }
+        unsafe { asm!("SEI") }
     }
 }
 
