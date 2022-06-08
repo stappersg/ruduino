@@ -1,6 +1,6 @@
 //! Definitions of register addresses and bits within those registers
 
-#![feature(llvm_asm)]
+#![feature(asm_experimental_arch)]
 #![feature(associated_type_defaults)]
 #![feature(lang_items)]
 #![feature(proc_macro_hygiene)]
@@ -10,6 +10,8 @@
 #[cfg(feature = "avr-std-stub")] extern crate avr_std_stub;
 
 extern crate const_env__value as const_env;
+
+use core::arch::asm;
 
 pub use self::register::{Register, RegisterBits, RegisterValue};
 pub use self::pin::{DataDirection, Pin};
